@@ -18,6 +18,20 @@ public class Book {
     @JoinTable(name="author_book",joinColumns = @JoinColumn(name="book_id"),inverseJoinColumns = @JoinColumn(name="author_id"))
     private Set<Author> authors=new HashSet<>();
 
+    public Book(){
+
+    }
+    public Book(String title,String publisher,String isbn){
+        this.title=title;
+        this.publisher=publisher;
+        this.isbn=isbn;
+    }
+    public Book(String title,String publisher,String isbn,Set<Author> authors){
+        this.title=title;
+        this.publisher=publisher;
+        this.isbn=isbn;
+        this.authors=authors;
+    }
     public Set<Author> getAuthors() {
         return authors;
     }
